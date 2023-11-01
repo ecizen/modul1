@@ -1,0 +1,53 @@
+const { on } = require("events");
+const http = require("http")
+
+const todo  =[
+    {id:1, text: 'one'},
+    {id:1, text: 'two'},
+    {id:1, text: 'tree'},
+ 
+]
+
+
+const server = http.createServer((req, res) => {
+
+    
+   
+
+    res.end(data)
+    console.log("Tes Server jalann")
+
+    let body = [];
+    req 
+    .on('data', chunk=> {
+        body.push(chunk);
+    })
+    .on('end', ()=>{
+        body = Buffer.concat(body).toString();
+        
+        let status = 404;
+
+        const response = {
+            succes : false,
+            results : [],
+            error: ''
+        }
+       
+    })
+});
+
+
+
+const data = JSON.stringify({
+    succes: false,
+   
+    data: todo
+})
+
+const PORT = 8080
+
+
+server.listen(PORT, () => console.log(`server succes berjalan ${PORT}`));
+
+
+
